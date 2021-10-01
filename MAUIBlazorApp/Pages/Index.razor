@@ -1,0 +1,64 @@
+﻿@page "/"
+@using MAUIBlazorApp.CardView
+@using MAUIBlazorApp.Data
+
+@foreach (var card in CardViewList)
+{
+    <CardView Title="@card.Title" BodyText="@card.Body" ImgRoute="@card.Img" />
+}
+
+
+
+@code{
+    public List<CardViewModel> CardViewList { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        CardViewList.Add(new CardViewModel
+        {
+            Title = "Jose Javier Columbie",
+            Body = "Senior Software Engineer - DevExpress & Microsoft MVP.",
+            Img = "https://sessionize.com/image/f54f-200o200o2-70-2956-4434-a66c-e3b264538d8d.3423bbb5-8ae1-4e90-b7ab-7ac32dca06b2.jpg"
+        });
+
+        CardViewList.Add(new CardViewModel
+        {
+            Title = "David Ortinau",
+            Body = "Principal Program Manager at Microsoft.",
+            Img = "https://sessionize.com/image/fe49-200o200o2-46-6e2a-4eae-9b6d-9cf8ff0ecf15.9864fb21-e931-4e29-a40d-21791a131de8.png"
+        });
+
+        CardViewList.Add(new CardViewModel
+        {
+            Title = "Javier Suárez Ruiz",
+            Body = "Software Engineer at Microsoft.",
+            Img = "https://sessionize.com/image/4e43-200o200o2-HUr6EoR5xogsvkdEvvWsrt.jpg"
+        });
+
+        CardViewList.Add(new CardViewModel
+        {
+            Title = "Luis Beltran",
+            Body = "Microsoft MVP, Xamarin Certified Mobile Developer.",
+            Img = "https://sessionize.com/image/0c9b-200o200o2-6e-ce00-46db-9ffa-8cb3f2e9d0ca.b7115887-cc1d-4635-ac04-f9b9f02c599f.jpg"
+        });
+
+        CardViewList.Add(new CardViewModel
+        {
+            Title = "Rendy Del Rosario",
+            Body = "Microsoft MVP.",
+            Img = "https://sessionize.com/image/7a5b-200o200o2-f6-1f4a-4bcb-86d9-5e8ccd12a34e.1b607a7a-cb4f-40d9-90c3-ec5dffb52ef7.jpg"
+        });
+
+        CardViewList.Add(new CardViewModel
+        {
+            Title = "Charlin Agramonte",
+            Body = "Microsoft MVP | Crossgeeks CO-Founder.",
+            Img = "https://sessionize.com/image/78cd-200o200o2-f1-fc98-4d5e-bfa3-aa0077fe0d7a.16e42450-6fa0-4562-ad9b-ccdeb01b6c36.jpg"
+        });
+        await Task.CompletedTask;
+    }
+}
+
+
+@*<SurveyPrompt Title="How is Blazor working for you?" />*@
